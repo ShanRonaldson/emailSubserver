@@ -8,6 +8,7 @@ const request = require("request");
 const app = express();
 
 app.use(express.static("public"));
+// app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
@@ -15,11 +16,17 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  var firstName = req.body.fName;
-  var surname = req.body.sName;
-  var email = req.body.email;
 
-  console.log(firstName);
+    // console.log(req);
+    console.log(req.body);
+
+//   var firstName = req.body.fName;
+//   var surname = req.body.sName;
+//   var email = req.body.email;
+
+//   console.log(firstName, surname, email);
+
+//   res.status(200).send();
 });
 
 app.listen(3000, function () {
